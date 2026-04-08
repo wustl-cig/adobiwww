@@ -21,14 +21,35 @@
             background-color: #f7f7f7;
             padding: 15px;
             font-family: monospace;
-            white-space: pre-wrap;       /* Allows text to wrap */
-            word-wrap: break-word;       /* Breaks long lines */
+            white-space: pre-wrap;
+            word-wrap: break-word;
             border-radius: 5px;
             border: 1px solid #ddd;
             font-size: 0.9rem;
+            text-align: left;
         }
+        
+        /* Title styling to take more space and look cleaner */
+        .jumbotron h2 {
+            max-width: 90%;
+            margin: 0 auto 1.5rem auto;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
         .section {
             margin-bottom: 3rem;
+        }
+
+        .jumbotron {
+            padding: 4rem 1rem;
+            background-color: #f8f9fa;
+        }
+
+        .btn-group .btn {
+            margin: 0 5px;
+            border-radius: 5px !important;
+            padding: 10px 25px;
         }
     </style>
 </head>
@@ -36,10 +57,9 @@
 <body>
 
 <div class="jumbotron jumbotron-fluid text-center">
-    <div class="container">
-        <h2>ADOBI: Adaptive Diffusion Bridge For Blind Inverse Problems <br> with Application to MRI Reconstruction</h2> 
-        <p class="abstract"><b>ADOBI is the first diffusion bridge method for blind imaging inverse problems.</b></p>
-        <hr>
+    <div class="container-fluid"> <h2>ADOBI: Adaptive Diffusion Bridge For Blind Inverse Problems with Application to MRI Reconstruction</h2> 
+        <p class="abstract" style="font-size: 1.2rem;"><b>ADOBI is the first diffusion bridge method for blind imaging inverse problems.</b></p>
+        <hr style="max-width: 600px;">
         <p class="authors">
             <a href="https://hu-yuyang.github.io/">Yuyang Hu</a><sup>1</sup>,
             <a href="https://peng-albert.github.io/">Albert Peng</a><sup>1</sup>,
@@ -52,7 +72,8 @@
         <p><i>Yuyang Hu and Albert Peng contributed equally to this project.</i></p>
 
         <div class="btn-group" role="group" aria-label="Top menu">
-            <a class="btn btn-primary" href="https://arxiv.org/abs/2411.16535">Preprint</a>
+            <a class="btn btn-primary" href="https://arxiv.org/abs/2411.16535">ArxiV</a>
+            <a class="btn btn-secondary" href="https://ieeexplore.ieee.org/document/11457257">TCI</a>
         </div>
     </div>
 </div>
@@ -81,7 +102,7 @@
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <img src="img/comparison.png" style="width:85%" alt="Comparison Results">
-                <p style="text-align: justify; margin-top: 10px;"><b>Figure 2:</b> Visual comparison of ADOBI with baseline methods on PMRI. The top row shows results for 4x accelerated PMRI data collection while the bottom row shows those 8x. Error maps and zoomed-in areas highlight differences.</p>
+                <p style="text-align: justify; margin-top: 10px;"><b>Figure 2:</b> Visual comparison of ADOBI with baseline methods on PMRI. The top row shows results for 4x accelerated PMRI data collection while the bottom row shows those 8x.</p>
             </div>
         </div>
     </div>
@@ -91,7 +112,7 @@
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <img src="img/ADOBI_psnr_lpips.png" style="width:57%" alt="Tradeoff Charts">
-                <p style="text-align: justify; margin-top: 10px;"><b>Figure 3:</b> Perception and distortion performance comparison. ADOBI consistently outperforms baselines across most NFE settings, achieving superior perception and distortion performance.</p>
+                <p style="text-align: justify; margin-top: 10px;"><b>Figure 3:</b> Perception and distortion performance comparison. ADOBI consistently outperforms baselines across most NFE settings.</p>
             </div>
         </div>
     </div>
@@ -101,7 +122,7 @@
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <img src="img/uncertainty.png" style="width:65%" alt="Uncertainty Maps">
-                <p style="text-align: justify; margin-top: 10px;"><b>Figure 4:</b> Uncertainty quantification results. The variance is heavily correlated to reconstruction errors, reflecting the ill-posed nature of the task.</p>
+                <p style="text-align: justify; margin-top: 10px;"><b>Figure 4:</b> Uncertainty quantification results. The variance is heavily correlated to reconstruction errors.</p>
             </div>
         </div>
     </div>
