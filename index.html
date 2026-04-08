@@ -8,86 +8,100 @@
     <meta name="author" content="Yuyang Hu, Albert Peng, Weijie Gan, Ulugbek S. Kamilov">
 
     <title>ADOBI: Adaptive Diffusion Bridge For Blind Inverse Problems with Application to MRI Reconstruction</title>
-    <!-- Bootstrap core CSS -->
-    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
     <link href="offcanvas.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="src/css/style.css">
 
+    <style>
+        /* Fix for the BibTeX overflow issue */
+        .bibtexsection {
+            background-color: #f7f7f7;
+            padding: 15px;
+            font-family: monospace;
+            white-space: pre-wrap;       /* Allows text to wrap */
+            word-wrap: break-word;       /* Breaks long lines */
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container"></div>
-    <h2>ADOBI: Adaptive Diffusion Bridge For Blind Inverse Problems <br> with Application to MRI Reconstruction</h2> 
-    <p class="abstract"><b>ADOBI is the first diffusion bridge method for blind imaging inverse problems.</b></p>
-    <hr>
-    <p class="authors">
-        <a href="https://hu-yuyang.githumub.io/">Yuyang Hu</a><sup>1</sup>,
-        <a href="https://peng-albert.github.io/">Albert Peng<sup>1</sup></a>,
-	    <a href="https://wjgancn.github.io/">Weijie Gan</a><sup>1</sup>,
-        <a href="https://ukmlv.github.io/">Ulugbek S. Kamilov</a><sup>1</sup>
-    </p>
-    <p>
-        <sup>1</sup><a href="https://washu.edu">WashU</a>
-    </p>
+<div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+        <h2>ADOBI: Adaptive Diffusion Bridge For Blind Inverse Problems <br> with Application to MRI Reconstruction</h2> 
+        <p class="abstract"><b>ADOBI is the first diffusion bridge method for blind imaging inverse problems.</b></p>
+        <hr>
+        <p class="authors">
+            <a href="https://hu-yuyang.github.io/">Yuyang Hu</a><sup>1</sup>,
+            <a href="https://peng-albert.github.io/">Albert Peng</a><sup>1</sup>,
+            <a href="https://wjgancn.github.io/">Weijie Gan</a><sup>1</sup>,
+            <a href="https://ukmlv.github.io/">Ulugbek S. Kamilov</a><sup>1</sup>
+        </p>
+        <p>
+            <sup>1</sup><a href="https://washu.edu">Washington University in St. Louis</a>
+        </p>
+        <p><i>Yuyang Hu and Albert Peng contributed equally to this project.</i></p>
 
-    <p> <b>Yuyang Hu</b> and <b>Albert Peng</b> contributed equally to this project.</p>
-
-
-    <div class="btn-group" role="group" aria-label="Top menu">
-        <a class="btn btn-primary" href="https://arxiv.org/abs/2411.16535">Preprint</a>
+        <div class="btn-group" role="group" aria-label="Top menu">
+            <a class="btn btn-primary" href="https://arxiv.org/abs/2411.16535">Preprint</a>
+        </div>
     </div>
 </div>
 
 <div class="container">
     <div class="section">
-    <h2>Abstract </h2>
-	      <hr>
-        <p>
-            Diffusion bridges (DB) have emerged as a promising alternative to diffusion models for imaging inverse problems, achieving faster sampling by directly bridging low- and high-quality image distributions. While incorporating measurement consistency has been shown to improve performance, existing DB methods fail to maintain this consistency in blind inverse problems, where the forward model is unknown. To address this limitation, we introduce ADOBI (Adaptive Diffusion Bridge for Inverse Problems), a novel framework that adaptively calibrates the unknown forward model to enforce measurement consistency throughout sampling iterations. Our adaptation strategy allows ADOBI to achieve high-quality parallel magnetic resonance imaging (PMRI) reconstruction in only 5–10 steps. Our numerical results show that ADOBI consistently delivers state-of-the-art performance, and further advances the Pareto frontier for the perception-distortion trade-off.</div>
+        <h2>Abstract</h2>
+        <hr>
+        <p style="text-align: justify;">
+            Diffusion bridges (DB) have emerged as a promising alternative to diffusion models for imaging inverse problems, achieving faster sampling by directly bridging low- and high-quality image distributions. While incorporating measurement consistency has been shown to improve performance, existing DB methods fail to maintain this consistency in blind inverse problems, where the forward model is unknown. To address this limitation, we introduce ADOBI (Adaptive Diffusion Bridge for Inverse Problems), a novel framework that adaptively calibrates the unknown forward model to enforce measurement consistency throughout sampling iterations. Our adaptation strategy allows ADOBI to achieve high-quality parallel magnetic resonance imaging (PMRI) reconstruction in only 5–10 steps. Our numerical results show that ADOBI consistently delivers state-of-the-art performance, and further advances the Pareto frontier for the perception-distortion trade-off.
+        </p>
+    </div>
 
     <div class="section">
         <h2>Adaptive Diffusion Bridge (ADOBI)</h2>
-            <div class="row align-items-center">
-                <div class="col justify-content-center text-center">
-                    <img src="img/adobi_method.png" style="width:90%" alt="Banner">
-                    <p style="text-align: justify;"><b>Figure 1:</b> ADOBI is a novel diffusion bridge method for imaging inverse problems that adapts unknown forward models to enforce measurement consistency.</p>
-                </div>
-            </div>
-        </div>
-
-    <div class="section">
-        <h2>ADOBI for PMRI</h2>
-            <div class="row align-items-center">
-                <div class="col justify-content-center text-center">
-                    <img src="img/comparison.png" style="width:85%" alt="Banner">
-                    <p style="text-align: justify;"><b>Figure 2:</b> Visual comparison of ADOBI with baseline methods on PMRI. The top row shows results for 4x accelerated PMRI data collection while the bottom row shows those 8x. Error maps and zoomed-in areas highlight
-                        differences. Note how ADOBI provides the best visual and quantitative performance in both settings</p>
-                </div>
-            </div>
-        </div>
-
-    <div class="section">
-    <h2>Perception-Distortion Tradeoff of ADOBI</h2>
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
-                <img src="img/ADOBI_psnr_lpips.png" style="width:57%" alt="Banner">
-                <p style="text-align: justify;"><b>Figure 3:</b> Perception and distortion performance comparison at 8x acceleration across different NFEs. Left: NFE vs. PSNR; Right: NFE vs. LPIPS. ADOBI consistently outperforms baselines. Our method outperforms baseline methods across most NFE settings, achieving superior perception and distortion performance. </p>
+                <img src="img/adobi_method.png" style="width:90%" alt="Method Overview">
+                <p style="text-align: justify; margin-top: 10px;"><b>Figure 1:</b> ADOBI is a novel diffusion bridge method for imaging inverse problems that adapts unknown forward models to enforce measurement consistency.</p>
             </div>
         </div>
     </div>
 
     <div class="section">
-    <h2>Uncertainty Quantification of ADOBI </h2>
+        <h2>ADOBI for PMRI</h2>
         <div class="row align-items-center">
-			<div class="col justify-content-center text-center">
-                <img src="img/uncertainty.png" style="width:65%" alt="Banner">
-                <p style="text-align: justify;"><b>Figure 4:</b> Uncertainty quantification results on 4x (top row) and 8x (bottom row) acceleration PMRI images. Absolute error to ground truth corresponds to conditional mean, and the variance is calculated by pixel-wise standard deviation. Ill-posed nature of the task has a direct effect on the diversity of generated images, and variance is heavily correlated to reconstruction errors. </p>
+            <div class="col justify-content-center text-center">
+                <img src="img/comparison.png" style="width:85%" alt="Comparison Results">
+                <p style="text-align: justify; margin-top: 10px;"><b>Figure 2:</b> Visual comparison of ADOBI with baseline methods on PMRI. The top row shows results for 4x accelerated PMRI data collection while the bottom row shows those 8x. Error maps and zoomed-in areas highlight differences.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Perception-Distortion Tradeoff</h2>
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <img src="img/ADOBI_psnr_lpips.png" style="width:57%" alt="Tradeoff Charts">
+                <p style="text-align: justify; margin-top: 10px;"><b>Figure 3:</b> Perception and distortion performance comparison. ADOBI consistently outperforms baselines across most NFE settings, achieving superior perception and distortion performance.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Uncertainty Quantification</h2>
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <img src="img/uncertainty.png" style="width:65%" alt="Uncertainty Maps">
+                <p style="text-align: justify; margin-top: 10px;"><b>Figure 4:</b> Uncertainty quantification results. The variance is heavily correlated to reconstruction errors, reflecting the ill-posed nature of the task.</p>
             </div>
         </div>
     </div>
@@ -95,7 +109,7 @@
     <div class="section">
         <h2>Bibtex</h2>
         <hr>
-        <div class="bibtexsection">
+        <pre class="bibtexsection">
 @ARTICLE{11457257,
   author={Hu, Yuyang and Peng, Albert and Gan, Weijie and Kamilov, Ulugbek S.},
   journal={IEEE Transactions on Computational Imaging}, 
@@ -104,12 +118,14 @@
   volume={},
   number={},
   pages={1-11},
-  doi={10.1109/TCI.2026.3678407}},
-          }
-        </div>
+  doi={10.1109/TCI.2026.3678407}}
+        </pre>
     </div>
     
     <hr>
+    <footer class="text-center" style="margin-bottom: 20px;">
+        <p>&copy; 2026 Washington University in St. Louis</p>
+    </footer>
 
 </div>
 </body>
